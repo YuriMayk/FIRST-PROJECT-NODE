@@ -3,13 +3,19 @@ const express = require("express")
 const uuid = require("uuid")
 //chamando(importando) a biblioteca uuid.
 
+const cors = require("cors");
+// importando o cors, que liberará o acesso À API.
 
-const port = 3000
+const port = 3001
 // Definindo porta a ser utilizada
 
 const app = express()
 //Armazenando o Express em uma variável
 app.use(express.json())
+
+//habilitando o cors para qualquer solicitador.
+app.use(cors());
+
 
 // Criando Array para armazenar usuários.
 const users = []
